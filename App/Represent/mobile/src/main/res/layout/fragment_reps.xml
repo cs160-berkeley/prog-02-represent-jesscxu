@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@drawable/rep_border"
+            android:id="@+id/border"
+            >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/person_photo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="5dp"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_name"
+                android:layout_toRightOf="@+id/person_photo"
+                android:layout_alignParentTop="true"
+                android:textSize="23sp"
+                android:layout_marginBottom="7dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_website"
+                android:layout_toRightOf="@+id/website_icon"
+                android:layout_below="@+id/person_name"
+                android:textSize="12sp"
+                />
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@drawable/website"
+                android:id="@+id/website_icon"
+                android:layout_below="@+id/person_name"
+                android:layout_toRightOf="@+id/person_photo"
+                android:layout_marginRight="5dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_email"
+                android:layout_toRightOf="@+id/email_icon"
+                android:layout_below="@+id/person_website"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/email"
+                android:id="@+id/email_icon"
+                android:layout_below="@+id/website_icon"
+                android:layout_toRightOf="@+id/person_photo"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/twitter"
+                android:id="@+id/twitter_icon"
+                android:layout_below="@+id/person_photo"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="7dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/latest_tweet"
+                android:layout_toRightOf="@+id/twitter_icon"
+                android:layout_below="@+id/person_photo"
+                android:text="Latest Tweet"
+                android:textColor="#0084b4"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="325sp"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_tweet"
+                android:layout_below="@+id/latest_tweet"
+                android:background="#CEECF5"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:padding="6dp"
+                android:textSize="13sp"
+                />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MORE INFO"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/person_tweet"
+                android:id="@+id/button"
+                android:onClick="detailedView"/>
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
