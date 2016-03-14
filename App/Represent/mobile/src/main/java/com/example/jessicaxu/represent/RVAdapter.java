@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -40,8 +41,18 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
         personViewHolder.personName.setText(persons.get(i).name);
         personViewHolder.personWebsite.setText(persons.get(i).website);
         personViewHolder.personEmail.setText(persons.get(i).email);
-        personViewHolder.personTweet.setText(persons.get(i).tweet);
-        personViewHolder.personPhoto.setImageResource(persons.get(i).photoId);
+
+        if (persons.get(i).tweetView != null) {
+            ViewGroup parent = (ViewGroup) persons.get(i).tweetView.getParent();
+            if (parent != null) {
+                parent.removeView(persons.get(i).tweetView);
+            }
+
+            personViewHolder.personTweet.addView(persons.get(i).tweetView);
+
+        }
+
+        personViewHolder.personPhoto.setImageBitmap(persons.get(i).image);
         personViewHolder.moreInfo.setTag(i);
 
         if (persons.get(i).party.equals("Democratic")) {
@@ -60,7 +71,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
         TextView personName;
         TextView personWebsite;
         TextView personEmail;
-        TextView personTweet;
+        LinearLayout personTweet;
         ImageView personPhoto;
         RelativeLayout border;
         Button moreInfo;
@@ -71,7 +82,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
             personName = (TextView)itemView.findViewById(R.id.person_name);
             personWebsite = (TextView)itemView.findViewById(R.id.person_website);
             personEmail = (TextView)itemView.findViewById(R.id.person_email);
-            personTweet = (TextView)itemView.findViewById(R.id.person_tweet);
+            personTweet = (LinearLayout)itemView.findViewById(R.id.person_tweet);
             personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
             border = (RelativeLayout)itemView.findViewById(R.id.border);
             moreInfo = (Button) itemView.findViewById(R.id.button);

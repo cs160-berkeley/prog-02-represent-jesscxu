@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jessicaxu.represent">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +31,12 @@
         </service>
 
         <activity android:name=".SpecificRep"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="436d7f93c65b101058914dec88779164d1cb9cd0" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDaj8bAUibm-WqymWYyVru9m3CsI8O5dV0" />
     </application>
 
 </manifest>

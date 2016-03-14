@@ -1,18 +1,29 @@
 # PROG 02: Represent!
 
-Briefly describe your app here.
+You can input location by zipcode and see the local representatives of the area. 
 
 ## Authors
 
-FirstName LastName ([your_email@berkeley.edu](mailto:your_email@berkeley.edu))
+Jessica Xu ([jcxu@berkeley.edu](mailto:your_email@berkeley.edu))
 
 ## Demo Video
 
-See [your demo video title here] (https://link_to_your_video)
+See [your demo video title here](https://youtu.be/Y8IayJf2Sxc)
 
 ## Screenshots
 
-<img src="screenshots/main.png" height="400" alt="Screenshot"/>
+<img src="screenshots/input.png" height="400" alt="Screenshot"/>
+
+<img src="screenshots/local_reps.png" height="400" alt="Screenshot"/>
+
+<img src="screenshots/detailed.png" height="400" alt="Screenshot"/>
+
+<img src="screenshots/detailed2.png" height="400" alt="Screenshot"/>
+
+<img src="screenshots/watch" height="400" alt="Screenshot"/>
+
+<img src="screenshots/pres" height="400" alt="Screenshot"/>
+
 
 ## Acknowledgments
 

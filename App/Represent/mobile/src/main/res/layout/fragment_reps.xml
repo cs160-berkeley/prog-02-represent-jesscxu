@@ -102,17 +102,19 @@
                 android:layout_marginTop="10dp"
                 />
 
-            <TextView
-                android:layout_width="325sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/person_tweet"
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_below="@+id/latest_tweet"
-                android:background="#CEECF5"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:padding="6dp"
-                android:textSize="13sp"
-                />
+                android:id="@+id/person_tweet"
+                android:layout_marginTop="10dp">
+
+
+            </LinearLayout>
+
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -125,6 +127,8 @@
                 android:layout_below="@+id/person_tweet"
                 android:id="@+id/button"
                 android:onClick="detailedView"/>
+
+
 
         </RelativeLayout>
 

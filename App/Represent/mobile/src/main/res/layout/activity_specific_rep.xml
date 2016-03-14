@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true">
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp">
 
 
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:src="@drawable/brown"
             android:id="@+id/specific_person_photo"
+            android:layout_gravity="center"
+
             />
 
         <TextView
@@ -19,6 +31,8 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:id="@+id/specific_name"
+            android:layout_gravity="center"
+            android:textSize="35sp"
             />
 
         <TextView
@@ -26,43 +40,81 @@
             android:layout_height="wrap_content"
             android:text="Term"
             android:id="@+id/specific_term"
+            android:layout_gravity="center"
+            android:textSize="25sp"
             />
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Party"
-            android:id="@+id/party"
-            />
+            android:layout_gravity="center_horizontal">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:id="@+id/title"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" — "
+                android:id="@+id/dash"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Party"
+                android:id="@+id/party"
+                android:textSize="20sp"
+                />
+
+
+        </LinearLayout>
+
+
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Committees Currently Serving On:"
-            android:id="@+id/committees_currently_serving_on" />
+            android:id="@+id/committees_currently_serving_on"
+            android:textSize="19sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#151414"/>
 
-        <ListView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/committees"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal" ></LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sponsored Recent Bills:"
             android:id="@+id/sponsored_recent_bills"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="15dp"
+            android:textSize="19sp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#151414"/>
 
-        <ListView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bills"
-            android:layout_gravity="center_horizontal" />
-
+            android:layout_gravity="center_horizontal" ></LinearLayout>
 
     </LinearLayout>
-
-
-
+</ScrollView>
 

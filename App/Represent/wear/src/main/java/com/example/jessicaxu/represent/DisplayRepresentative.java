@@ -9,16 +9,16 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.wearable.view.GridViewPager;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class DisplayRepresentative extends Activity implements SensorEventListener {
 
-
     public ArrayList<String> repsNames;
     public ArrayList<Integer> repsParty;
     public String location;
+    public String obama;
+    public String romney;
     private float last_x = 0;
     private float last_y = 0;
     private float last_z = 0;
@@ -42,25 +42,22 @@ public class DisplayRepresentative extends Activity implements SensorEventListen
 //        repsParty.add(R.drawable.rep);
 //        repsParty.add(R.drawable.dem);
 
-        System.out.println("names:");
+//        System.out.println("names:");
         for (String n : names) {
             repsNames.add(n);
-            System.out.println(n);
+//            System.out.println(n);
         }
 
         System.out.println("parties:");
         for (String p : parties) {
-            if (p.equals("d")) {
+            if (p.equals("Democratic")) {
                 repsParty.add(R.drawable.dem);
-                System.out.println("democrat");
             }
-            if (p.equals("r")) {
+            if (p.equals("Republican")) {
                 repsParty.add(R.drawable.rep);
-                System.out.println("republican");
             }
-            if (p.equals("i")) {
+            if (p.equals("Independent")) {
                 repsParty.add(R.drawable.indep);
-                System.out.println("independent");
             }
 
         }
@@ -91,6 +88,8 @@ public class DisplayRepresentative extends Activity implements SensorEventListen
         String[] names = new String[] {};
         String[] parties = new String[] {};
         location = "";
+        obama = "";
+        romney = "";
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -103,7 +102,9 @@ public class DisplayRepresentative extends Activity implements SensorEventListen
             String[] info = message.split(":");
             names = info[0].split(",");
             parties = info[1].split(",");
-            location = info[2];
+            location = info[4];
+            obama = "Obama: " + String.valueOf(info[2]) + "%";
+            romney = "Romney: " + String.valueOf(info[3]) + "%";
 
 
 

@@ -51,14 +51,14 @@ public class SampleGridPagerAdapter extends FragmentGridPagerAdapter {
         if (col == (getColumnCount(0) - 1)) {
 
             String loc = ((DisplayRepresentative) mContext).location;
-            System.out.println(loc);
+            String obama = ((DisplayRepresentative) mContext).obama;
+            String romney = ((DisplayRepresentative) mContext).romney;
 
-            if (loc.equals("Franklin County — OH")) {
-                presView = PresidentialView.create("Obama: 60%", "Romney: 40%", loc);
+//            System.out.println(loc);
 
-            } else {
-                presView = PresidentialView.create("Obama: 50%", "Romney: 50%", "Orlando County — FL");
-            }
+            presView = PresidentialView.create(obama, romney, loc);
+
+
 
 
 
@@ -84,22 +84,8 @@ public class SampleGridPagerAdapter extends FragmentGridPagerAdapter {
     @Override
     public Drawable getBackgroundForPage(int row, int column) {
         String location = ((DisplayRepresentative) mContext).location;
-        if(column == 0) {
-            // Place image at specified position
-            if (location.equals("Orlando County — FL")) {
-                return mContext.getResources().getDrawable(R.drawable.nelson, null);
-            }
-            return mContext.getResources().getDrawable(R.drawable.brown2, null);
-        } else if (column == 1) {
-            if (location.equals("Orlando County — FL")) {
-                return mContext.getResources().getDrawable(R.drawable.rubio, null);
-            }
-            return mContext.getResources().getDrawable(R.drawable.tiberi2, null);
-        } else if (column == 2) {
-            if (location.equals("Orlando County — FL")) {
-                return mContext.getResources().getDrawable(R.drawable.webster, null);
-            }
-            return mContext.getResources().getDrawable(R.drawable.stivers2, null);
+        if(column != getColumnCount(row) - 1) {
+            return GridPagerAdapter.BACKGROUND_NONE;
         } else {
             // Default to background image for row
             return GridPagerAdapter.BACKGROUND_NONE;
